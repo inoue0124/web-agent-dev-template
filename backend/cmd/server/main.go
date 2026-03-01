@@ -5,6 +5,7 @@ import (
 	"os"
 
 	"github.com/gin-gonic/gin"
+
 	"github.com/inoue0124/web-agent-dev-template/backend/internal/config"
 	"github.com/inoue0124/web-agent-dev-template/backend/internal/handler"
 	"github.com/inoue0124/web-agent-dev-template/backend/internal/middleware"
