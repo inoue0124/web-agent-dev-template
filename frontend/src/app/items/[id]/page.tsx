@@ -2,13 +2,7 @@ import Link from "next/link";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { getItem } from "@/lib/api/items";
 import { Item } from "@/types/item";
@@ -23,11 +17,7 @@ function createMockItem(id: string): Item {
   };
 }
 
-export default async function ItemDetailPage({
-  params,
-}: {
-  params: Promise<{ id: string }>;
-}) {
+export default async function ItemDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
 
   let item: Item;
@@ -41,13 +31,13 @@ export default async function ItemDetailPage({
   }
 
   return (
-    <main className="min-h-screen bg-background">
+    <main className="bg-background min-h-screen">
       <div className="mx-auto max-w-3xl px-6 py-10">
         {/* Header */}
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-3xl font-bold tracking-tight">Item Detail</h1>
-            <p className="mt-1 text-muted-foreground">View item information</p>
+            <p className="text-muted-foreground mt-1">View item information</p>
           </div>
           <Link href="/items">
             <Button variant="outline">Back to List</Button>
@@ -72,7 +62,7 @@ export default async function ItemDetailPage({
           </CardHeader>
           <CardContent className="space-y-4">
             <div>
-              <p className="text-sm font-medium text-muted-foreground">Description</p>
+              <p className="text-muted-foreground text-sm font-medium">Description</p>
               {item.description ? (
                 <p className="mt-1">{item.description}</p>
               ) : (
@@ -84,16 +74,12 @@ export default async function ItemDetailPage({
             <Separator />
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <p className="text-sm font-medium text-muted-foreground">Created</p>
-                <p className="mt-1 text-sm">
-                  {new Date(item.created_at).toLocaleString("ja-JP")}
-                </p>
+                <p className="text-muted-foreground text-sm font-medium">Created</p>
+                <p className="mt-1 text-sm">{new Date(item.created_at).toLocaleString("ja-JP")}</p>
               </div>
               <div>
-                <p className="text-sm font-medium text-muted-foreground">Updated</p>
-                <p className="mt-1 text-sm">
-                  {new Date(item.updated_at).toLocaleString("ja-JP")}
-                </p>
+                <p className="text-muted-foreground text-sm font-medium">Updated</p>
+                <p className="mt-1 text-sm">{new Date(item.updated_at).toLocaleString("ja-JP")}</p>
               </div>
             </div>
           </CardContent>

@@ -1,12 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import {
   Table,
@@ -35,25 +29,19 @@ const items = [
 
 function StatusBadge({ status }: { status: string }) {
   const variant =
-    status === "active"
-      ? "default"
-      : status === "completed"
-        ? "secondary"
-        : "outline";
+    status === "active" ? "default" : status === "completed" ? "secondary" : "outline";
   return <Badge variant={variant}>{status}</Badge>;
 }
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-background">
+    <main className="bg-background min-h-screen">
       <div className="mx-auto max-w-6xl px-6 py-10">
         {/* Header */}
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-3xl font-bold tracking-tight">
-              Web Agent Dev Template
-            </h1>
-            <p className="mt-1 text-muted-foreground">
+            <h1 className="text-3xl font-bold tracking-tight">Web Agent Dev Template</h1>
+            <p className="text-muted-foreground mt-1">
               Next.js + Go/Gin で始める AI エージェント開発
             </p>
           </div>
@@ -71,9 +59,7 @@ export default function HomePage() {
                 <CardTitle className="text-2xl">{stat.value}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-xs text-muted-foreground">
-                  {stat.description}
-                </p>
+                <p className="text-muted-foreground text-xs">{stat.description}</p>
               </CardContent>
             </Card>
           ))}
@@ -83,9 +69,7 @@ export default function HomePage() {
         <Card className="mt-8">
           <CardHeader>
             <CardTitle>Items</CardTitle>
-            <CardDescription>
-              A list of sample items managed by the agent.
-            </CardDescription>
+            <CardDescription>A list of sample items managed by the agent.</CardDescription>
           </CardHeader>
           <CardContent>
             <Table>
@@ -94,17 +78,13 @@ export default function HomePage() {
                   <TableHead className="w-[120px]">ID</TableHead>
                   <TableHead>Name</TableHead>
                   <TableHead className="w-[120px]">Status</TableHead>
-                  <TableHead className="w-[100px] text-right">
-                    Actions
-                  </TableHead>
+                  <TableHead className="w-[100px] text-right">Actions</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {items.map((item) => (
                   <TableRow key={item.id}>
-                    <TableCell className="font-mono text-sm">
-                      {item.id}
-                    </TableCell>
+                    <TableCell className="font-mono text-sm">{item.id}</TableCell>
                     <TableCell>{item.name}</TableCell>
                     <TableCell>
                       <StatusBadge status={item.status} />
