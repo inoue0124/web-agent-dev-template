@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+COMMIT_MSG_FILE=$1
+COMMIT_MSG=$(cat "$COMMIT_MSG_FILE")
+
+# Conventional Commits pattern
+PATTERN='^(feat|fix|chore|docs|test|refactor|style|perf|ci|build|revert)(\(.+\))?: .+$'
+
+# Allow merge commits
+if echo "$COMMIT_MSG" | grep -qE '^Merge '; then
+  exit 0
+fi
+
+if ! echo "$COMMIT_MSG" | head -1 | grep -qE "$PATTERN"; then
+  echo "❌ Invalid commit message format."
+  echo ""
+  echo "Expected: <type>(<scope>): <subject>"
+  echo ""
+  echo "Types: feat, fix, chore, docs, test, refactor, style, perf, ci, build, revert"
+  echo "Scope: optional (e.g., frontend, backend, ci)"
+  echo ""
+  echo "Examples:"
+  echo "  feat(frontend): add user login page"
+  echo "  fix(backend): resolve null pointer in handler"
+  echo "  chore: update dependencies"
+  exit 1
+fi
+
+echo "✅ Commit message format is valid."
