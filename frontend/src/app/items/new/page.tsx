@@ -6,13 +6,7 @@ import { useState } from "react";
 import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
@@ -68,13 +62,13 @@ export default function NewItemPage() {
   }
 
   return (
-    <main className="min-h-screen bg-background">
+    <main className="bg-background min-h-screen">
       <div className="mx-auto max-w-2xl px-6 py-10">
         {/* Header */}
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-3xl font-bold tracking-tight">New Item</h1>
-            <p className="mt-1 text-muted-foreground">Create a new item</p>
+            <p className="text-muted-foreground mt-1">Create a new item</p>
           </div>
           <Link href="/items">
             <Button variant="outline">Back to List</Button>
@@ -106,7 +100,7 @@ export default function NewItemPage() {
                   onChange={(e) => setName(e.target.value)}
                   aria-invalid={!!errors.name}
                 />
-                {errors.name && <p className="text-sm text-destructive">{errors.name}</p>}
+                {errors.name && <p className="text-destructive text-sm">{errors.name}</p>}
               </div>
 
               <div className="space-y-2">
@@ -119,7 +113,7 @@ export default function NewItemPage() {
                   aria-invalid={!!errors.description}
                 />
                 {errors.description && (
-                  <p className="text-sm text-destructive">{errors.description}</p>
+                  <p className="text-destructive text-sm">{errors.description}</p>
                 )}
               </div>
 
