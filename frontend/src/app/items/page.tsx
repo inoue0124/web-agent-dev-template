@@ -2,13 +2,7 @@ import Link from "next/link";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import {
   Table,
@@ -57,13 +51,13 @@ export default async function ItemsPage() {
   }
 
   return (
-    <main className="min-h-screen bg-background">
+    <main className="bg-background min-h-screen">
       <div className="mx-auto max-w-6xl px-6 py-10">
         {/* Header */}
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-3xl font-bold tracking-tight">Items</h1>
-            <p className="mt-1 text-muted-foreground">Manage your items</p>
+            <p className="text-muted-foreground mt-1">Manage your items</p>
           </div>
           <Link href="/items/new">
             <Button>New Item</Button>
@@ -100,7 +94,7 @@ export default async function ItemsPage() {
               <TableBody>
                 {items.length === 0 ? (
                   <TableRow>
-                    <TableCell colSpan={5} className="text-center text-muted-foreground">
+                    <TableCell colSpan={5} className="text-muted-foreground text-center">
                       No items found.
                     </TableCell>
                   </TableRow>
@@ -116,7 +110,7 @@ export default async function ItemsPage() {
                           <Badge variant="outline">No description</Badge>
                         )}
                       </TableCell>
-                      <TableCell className="text-sm text-muted-foreground">
+                      <TableCell className="text-muted-foreground text-sm">
                         {new Date(item.created_at).toLocaleDateString("ja-JP")}
                       </TableCell>
                       <TableCell className="text-right">
