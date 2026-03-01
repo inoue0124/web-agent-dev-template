@@ -114,6 +114,10 @@ scope: frontend, backend, infra, ci, docs（省略可）
 - **Playwright MCP** — ブラウザ操作・スクリーンショット・E2E テスト
   - `testing` プラグインの `/e2e-test-gen` でブラウザ操作テストに使用
   - `code-review-assist` プラグインの `/pr-review` で UI 変更の目視確認に使用
+- **Chrome DevTools MCP** — デバッグ・パフォーマンス分析・ネットワーク監視
+  - パフォーマンストレースの記録・ボトルネック特定
+  - ネットワークリクエストの詳細分析
+  - コンソールログ・エラーのソースマップ付き確認
 
 ## テスト
 
