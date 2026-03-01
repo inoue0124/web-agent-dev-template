@@ -45,16 +45,12 @@ func main() {
 	itemHandler := handler.NewItemHandler(itemService)
 
 	v1 := r.Group("/api/v1")
-	{
-		items := v1.Group("/items")
-		{
-			items.GET("", itemHandler.List)
-			items.GET("/:id", itemHandler.GetByID)
-			items.POST("", itemHandler.Create)
-			items.PUT("/:id", itemHandler.Update)
-			items.DELETE("/:id", itemHandler.Delete)
-		}
-	}
+	items := v1.Group("/items")
+	items.GET("", itemHandler.List)
+	items.GET("/:id", itemHandler.GetByID)
+	items.POST("", itemHandler.Create)
+	items.PUT("/:id", itemHandler.Update)
+	items.DELETE("/:id", itemHandler.Delete)
 
 	slog.Info("server starting", "port", cfg.Port)
 	if err := r.Run(":" + cfg.Port); err != nil {
