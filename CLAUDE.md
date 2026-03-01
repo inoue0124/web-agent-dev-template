@@ -105,8 +105,15 @@ scope: frontend, backend, infra, ci, docs（省略可）
 利用可能な場合は MCP ツールを優先して使用する:
 
 - **Figma MCP** — デザインデータ参照・デザイントークン取得・コード生成
+  - `spec-driven-dev` プラグインの `/implement-feature` でデザインファイルからの UI 実装に使用
+  - Figma API Token が必要（`FIGMA_TOKEN` 環境変数）
 - **PostgreSQL MCP (DBHub)** — DB スキーマ参照・クエリ実行・データ分析
+  - `testing` プラグインの `/unit-test-gen` でテストデータの確認に使用
+  - `onboarding` プラグインの `/codebase-overview` でスキーマ構造の解説に使用
+  - 接続先: `DATABASE_URL` 環境変数（デフォルト: `postgresql://postgres:postgres@localhost:5432/app_dev`）
 - **Playwright MCP** — ブラウザ操作・スクリーンショット・E2E テスト
+  - `testing` プラグインの `/e2e-test-gen` でブラウザ操作テストに使用
+  - `code-review-assist` プラグインの `/pr-review` で UI 変更の目視確認に使用
 
 ## テスト
 

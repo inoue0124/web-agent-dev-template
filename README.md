@@ -114,6 +114,15 @@ claude
 | アーキテクチャ検査 | `/component-check`, `/go-layer-check` |
 | 新メンバー向けガイド | `/codebase-overview`, `/architecture-map` |
 
+### プラグインワークフロー例
+
+| ワークフロー | プラグインチェーン |
+|---|---|
+| 仕様駆動開発 | `/prd-writing` → `/architecture-design` → `/implement-feature` |
+| 日常開発 | `/lint-check`, `/format-check`, `/unit-test-gen`, `/test-run` |
+| レビュー | `/pr-checklist`, `/pr-diff-review`, `/pr-review` |
+| 新メンバー | `/codebase-overview`, `/architecture-map`, `/glossary-gen` |
+
 ## ディレクトリ構成
 
 ```
