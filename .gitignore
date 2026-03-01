@@ -1,0 +1,45 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+
+# Next.js
+frontend/.next/
+frontend/out/
+
+# Build
+frontend/dist/
+backend/tmp/
+backend/bin/
+
+# Go
+backend/vendor/
+
+# Environment
+.env
+.env.local
+.env.*.local
+frontend/.env.local
+backend/.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+frontend/coverage/
+backend/coverage.out
+
+# Docker
+docker-compose.override.yml
+
+# Misc
+*.log
+*.pid
+*.seed
