@@ -1,0 +1,30 @@
+{
+  "mcpServers": {
+    "figma": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "figma-developer-mcp",
+        "--figma-api-key=$FIGMA_TOKEN"
+      ]
+    },
+    "postgres": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@anthropic/dbhub",
+        "--transport",
+        "stdio",
+        "--url",
+        "${DATABASE_URL:-postgresql://postgres:postgres@localhost:5432/app_dev}"
+      ]
+    },
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@anthropic/playwright-mcp"
+      ]
+    }
+  }
+}
