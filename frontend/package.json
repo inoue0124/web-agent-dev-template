@@ -51,7 +51,7 @@
     "@vitejs/plugin-react": "^5.1.4",
     "@vitest/browser-playwright": "^4.0.18",
     "@vitest/coverage-v8": "^4.0.18",
-    "eslint": "^9",
+    "eslint": "^10",
     "eslint-config-next": "15.5.12",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-storybook": "^10.2.13",
